@@ -1,0 +1,33 @@
+// Fontawesome
+$fa-font-path: '~fontawesome/webfonts';
+@import '~fontawesome/scss/fontawesome';
+@import '~fontawesome/scss/regular';
+@import '~fontawesome/scss/solid';
+@import '~fontawesome/scss/brands';
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+html,
+body,
+#app {
+	height: 100%;
+}
+
+.btn i {
+	margin-right: 8px;
+}
+
+::placeholder {
+	font-size: 0.9em;
+	font-style: italic;
+	font-weight: normal !important;
+	opacity: 0.5 !important;
+}
+
+.modal-content {
+	box-shadow: 0 0 15px rgba(#000, 0.5);
+}
