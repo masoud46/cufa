@@ -40,11 +40,17 @@ class HomeController extends Controller {
 		$result = ['success' => true];
 		$recipients = env('MAIL_TO_ADDRESS', null);
 
-		if (empty($recipients)) return response()->json($result);
+		if (empty($recipients)) {
+			$result['data'] = 'empty recipients';
+			return response()->json($result);
+		}
 
 		$recipients = explode('|', $recipients);
 
-		if (empty($recipients[0])) return response()->json($result);
+		if (empty($recipients[0])) {
+			$result['data'] = 'empty recipients[0]';
+			return response()->json($result);
+		}
 
 		try {
 			foreach ($recipients as $recipient) {
