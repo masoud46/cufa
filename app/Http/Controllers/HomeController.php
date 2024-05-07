@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Mail\AttendanceConfirmation;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller {
@@ -38,7 +37,7 @@ class HomeController extends Controller {
 		// 	'phone' => '+32 472 87 70 55',
 		// ]);
 		$result = ['success' => true];
-		$recipients = env('MAIL_TO_ADDRESS', null);
+		$recipients = config('project.confirmation_to_address', null);
 
 		if (empty($recipients)) {
 			$result['data'] = "empty recipients: " . var_export($recipients, true);
