@@ -41,14 +41,14 @@ class HomeController extends Controller {
 		$recipients = env('MAIL_TO_ADDRESS', null);
 
 		if (empty($recipients)) {
-			$result['data'] = 'empty recipients';
+			$result['data'] = "empty recipients: " . var_export($recipients, true);
 			return response()->json($result);
 		}
 
 		$recipients = explode('|', $recipients);
 
 		if (empty($recipients[0])) {
-			$result['data'] = 'empty recipients[0]';
+			$result['data'] = "empty recipients[0]: " . var_export($recipients[0], true);
 			return response()->json($result);
 		}
 
