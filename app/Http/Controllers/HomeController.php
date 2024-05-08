@@ -28,14 +28,6 @@ class HomeController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function attendanceConfirmation(Request $request) {
-		// return response()->json(['success' => true]);
-		// return new AttendanceConfirmation((object) [
-		// 	'firstname' => 'Masoud',
-		// 	'lastname' => 'Fathi',
-		// 	'company' => '',
-		// 	'email' => 'masoudf46@gmail.com',
-		// 	'phone' => '+32 472 87 70 55',
-		// ]);
 		$result = ['success' => true];
 		$recipients = config('project.confirmation_to_address', null);
 
